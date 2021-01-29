@@ -2,32 +2,35 @@
 
 namespace C_Object
 {
-    public partial class Program : Program1
+    public partial class Form1 : Form
     {
-        public Program()
+        public Form1()
         {
             InitializeComponent();
+
+            this.Text = LoginInfo.Member.GetName();
         }
 
         private void ExecutionButton_Click(object sender, EventArgs e)
         {
-            var value = Convert.ToInt32(InputTextBox.Text);
+
             if(SilverRadioButton.Checked)
             {
-                ResultLabel.Text = value.ToString();
-                return;
+                LoginInfo.Member = new SilverMember();
+            }
+            else if(GoldRadioButton.Checked)
+            {
+                LoginInfo.Member = new GoldMember();
+
+            }
+            else (PlatinumRadioButton.Checked)
+            {
+                LoginInfo.Member = new PlatinumrMember();
             }
 
-            if(GoldRadioButton.Checked)
+            using (var f = new Form1())
             {
-                ResultLabel.Text = (value * 0.8f).ToString();
-                return;
-            }
-
-            if(PlatinumRadioButton.Checked)
-            {
-                ResultLabel.Text = (value * 0.6f).ToString();
-                return;
+                f.ShowDialog();
             }
         }
 
@@ -49,7 +52,7 @@ namespace C_Object
                 menber = new PlatinumMember();
             }
 
-            ResultLabel.Text = (value * member.Rate).ToString();
+            ResultLabel.Text = (value * LoginInfo.member.Rate).ToString();
         }
     }
 }
