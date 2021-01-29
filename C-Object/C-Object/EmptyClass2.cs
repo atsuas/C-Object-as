@@ -1,10 +1,8 @@
 ﻿using System;
 namespace C_Object
 {
-    public class EmptyClass2
+    public class EmptyClass2 : EmptyClass1
     {
-        public EmptyClass2()
-        {
-        }
+        
     }
 }
