@@ -10,7 +10,7 @@ namespace C_Object
             Platinum,
         }
 
-        public static IMember Create(MemberKind member)
+        public static Member Create(MemberKind member)
         {
             if (member == MemberKind.Gold)
             {

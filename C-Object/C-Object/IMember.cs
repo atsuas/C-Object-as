@@ -7,32 +7,32 @@ namespace C_Object
         string GetName { get; }
     }
 
-    public sealed class SilverMember : IMember
-    {
-        public float Rate => 1.0f;
+    //public sealed class SilverMember : IMember
+    //{
+    //    public float Rate => 1.0f;
 
-        public string GetName()
-        {
-            return "シルバー";
-        }
+    //    public string GetName()
+    //    {
+    //        return "シルバー";
+    //    }
 
-    public sealed class GoldrMember : IMember
-    {
-        public float Rate => 0.8f;
+    //public sealed class GoldrMember : IMember
+    //{
+    //    public float Rate => 0.8f;
 
-            public string GetName()
-            {
-                return "ゴールド";
-            }
-        }
+    //        public string GetName()
+    //        {
+    //            return "ゴールド";
+    //        }
+    //    }
 
-    public sealed class PlatinumMember : IMember
-    {
-        public float Rate => 0.6f;
+    //public sealed class PlatinumMember : IMember
+    //{
+    //    public float Rate => 0.6f;
 
-            public string GetName()
-            {
-                return "プラチナ";
-            }
-        }
+    //        public string GetName()
+    //        {
+    //            return "プラチナ";
+    //        }
+    //    }
 }

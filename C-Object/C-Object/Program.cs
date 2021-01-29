@@ -50,7 +50,7 @@ namespace C_Object
                 menber = new PlatinumMember();
             }
 
-            ResultLabel.Text = (value * LoginInfo.member.Rate).ToString();
+            ResultLabel.Text = (value * LoginInfo.Member.GetRate()).ToString();
         }
     }
 }
