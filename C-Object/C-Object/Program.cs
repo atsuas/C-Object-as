@@ -13,20 +13,18 @@ namespace C_Object
 
         private void ExecutionButton_Click(object sender, EventArgs e)
         {
+            MemberKind memberKind = MemberKind.Silver;
+            if(GoldRadioButton.Checked)
+            {
+                memberKind = MemberKind.Gold;
+            }
+            else if(PlatinumRadioButton.Checked)
+            {
+                memberKind = MemberKind.Platinum;
 
-            if(SilverRadioButton.Checked)
-            {
-                LoginInfo.Member = new SilverMember();
             }
-            else if(GoldRadioButton.Checked)
-            {
-                LoginInfo.Member = new GoldMember();
 
-            }
-            else (PlatinumRadioButton.Checked)
-            {
-                LoginInfo.Member = new PlatinumrMember();
-            }
+            LoginInfo.Member = MemberFactory.Create(meberKind);
 
             using (var f = new Form1())
             {
