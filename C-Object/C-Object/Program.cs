@@ -30,5 +30,26 @@ namespace C_Object
                 return;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var value = Convert.ToInt32(InputTextBox.Text);
+
+            IMember menber;
+            if (SilverRadioButton.Checked)
+            {
+                menber = new SilverMember();
+            }
+            else if (GoldRadioButton.Checked)
+            {
+                menber = new GoldrMember();
+            }
+            else
+            {
+                menber = new PlatinumMember();
+            }
+
+            ResultLabel.Text = (value * member.Rate).ToString();
+        }
     }
 }
