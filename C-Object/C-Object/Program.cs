@@ -2,23 +2,16 @@
 
 namespace C_Object
 {
-    class Program
+    public partial class Program : Program1
     {
-        private void ShowButton_Click()
+        public Program()
         {
-            var val = GetAmount();
-            ShowLabel.Text = (val * 1.08m).ToString() + "円";
+            InitializeComponent();
         }
 
-        private decimal GetAmount()
+        private void ExecutionButton_Click(object sender, EventArgs e)
         {
-            return 100m;
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var money = new Money(GetAmount());
-            ShowLabel.Text = money.TaxValue + "円";
         }
     }
 }
