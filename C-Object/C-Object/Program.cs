@@ -2,11 +2,26 @@
 
 namespace C_Object
 {
-    class Program
+    public partial class Form1 : Form
     {
-        static void Main(string[] args)
+        public Form1()
         {
-            Console.WriteLine("Hello World!");
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EmptyClass2 c2 = new EmptyClass2();
+            MessageBox.Show(c2.GetAAA().ToString());
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            int value = 0;
+            if (!int.TryParse(this.Text, out value))
+            {
+                this.Text = "0";
+            }
         }
     }
 }
