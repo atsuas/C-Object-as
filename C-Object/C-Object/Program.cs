@@ -14,5 +14,14 @@ namespace C_Object
             EmptyClass2 c2 = new EmptyClass2();
             MessageBox.Show(c2.GetAAA().ToString());
         }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            int value = 0;
+            if (!int.TryParse(this.Text, out value))
+            {
+                this.Text = "0";
+            }
+        }
     }
 }
